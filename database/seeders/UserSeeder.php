@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
     public function run()
     {
 
+        /*
         DB::table('users')->insert([
             'nick' => 'Invitado',
             'email' => 'invitado@gmail.com',
@@ -25,7 +26,7 @@ class UserSeeder extends Seeder
             'role' => 'guest',
             'fullname' => 'Usuario Invitado',
             'avatar' => 'imagendefault.png'
-        ]);
+        ]); */
 
 
         DB::table('users')->insert([
