@@ -18,7 +18,8 @@ class CreateBoardgamesTable extends Migration
             $table->string('title')->unique();
             $table->string('creator');
             $table->date('release');
-            $table->string('num_players');
+            $table->string('max_num_players');
+            $table->string('min_num_players');
             $table->string('playing_time');
             $table->string('ages');
             $table->string('publisher');
