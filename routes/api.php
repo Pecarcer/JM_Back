@@ -4,6 +4,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,21 @@ Route::post('/login', function (Request $request) {
 
     return response($response, 201);
 });
+
+
+//TODO REGISTRO
+
+/*
+Route::post('users','UserController@store');
+Route::get('users','UserController@get');
+Route::delete('users/{id}', 'UserController@delete'); */
+
+Route::group(['prefix' => 'users', 'middleware' => 'auth:sanctum'], function () {
+    Route::get('/', [UserController::class, 'index']);
+    Route::post('add', [UserController::class, 'add']);
+    Route::get('edit/{id}', [UserController::class, 'edit']);
+    Route::post('update/{id}', [UserController::class, 'update']);
+    Route::delete('delete/{id}', [UserController::class, 'delete']);
+});
+
+
