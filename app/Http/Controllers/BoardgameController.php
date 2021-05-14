@@ -29,19 +29,29 @@ class BoardgameController extends Controller
 
     // add boardgame
     public function add(Request $request)
-    {    //TODO RETOCAR PORQUE QUIERO CAMBIAR LA MIGRATION
+    {
         $this->validate($request, [
-            'author' => '',
-            'review_id' => '',
-            'post' => 'required',
-            'commentary' => 'required',
+            'title'=> 'required',
+            'creator' => 'required',
+            'release' => 'required|date',
+            'min_num_players' => 'required',
+            'max_num_players' => 'required',
+            'playing_time' => 'required',
+            'ages' => 'required',
+            'publisher' => 'required',
+            'image' => '',
         ]);
 
         $boardgame = new Boardgame([
-            'author' => $request->author,
-            'review_id' => $request->review_id,
-            'post' => $request->post,
-            'commentary' => $request->commentary
+            'title'=> $request->title,
+            'creator' => $request->creator,
+            'release' => $request->release,
+            'min_num_players' => $request->min_num_players,
+            'max_num_players' => $request->max_num_players,
+            'playing_time' =>$request->playing_time,
+            'ages' => $request->ages,
+            'publisher' =>$request->publisher,
+            'image' => $request->image
         ]);
         $boardgame->save();
 
