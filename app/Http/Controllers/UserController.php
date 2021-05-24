@@ -41,7 +41,7 @@ class UserController extends Controller
         $user = new User([
             'nick' => $request->nick,
             'email' => $request->email,
-            'role' =>"user",
+            'role' =>$request->role,
             'password'=> Hash::make($request->password),
             'fullname' => $request->fullname,
             'avatar' => "imagendefault.jpg"
