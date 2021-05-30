@@ -24,7 +24,7 @@ class CommentController extends Controller
     public function index()
     {
         $comments = Comment::all()->toArray();
-        return array_reverse($comments);
+        return $comments;
     }
 
     // add comment

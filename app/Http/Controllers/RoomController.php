@@ -24,7 +24,7 @@ class RoomController extends Controller
     public function index()
     {
         $rooms = Room::all()->toArray();
-        return array_reverse($rooms);
+        return $rooms;
     }
 
     // add room

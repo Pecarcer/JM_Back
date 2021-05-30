@@ -24,7 +24,7 @@ class LikeController extends Controller
     public function index()
     {
         $likes = Like::all()->toArray();
-        return array_reverse($likes);
+        return $likes;
     }
 
     // add like

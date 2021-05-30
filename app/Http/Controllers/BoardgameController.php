@@ -24,7 +24,7 @@ class BoardgameController extends Controller
     public function index()
     {
         $boardgames = Boardgame::all()->toArray();
-        return array_reverse($boardgames);
+        return $boardgames;
     }
 
     // add boardgame

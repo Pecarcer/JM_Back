@@ -24,7 +24,7 @@ class GameController extends Controller
     public function index()
     {
         $games = Game::all()->toArray();
-        return array_reverse($games);
+        return $games;
     }
 
     // add game

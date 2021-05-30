@@ -24,7 +24,7 @@ class DebtorController extends Controller
     public function index()
     {
         $debtors = Debtor::all()->toArray();
-        return array_reverse($debtors);
+        return $debtors;
     }
 
     // add debtor

@@ -24,7 +24,7 @@ class ReviewController extends Controller
     public function index()
     {
         $reviews = Review::all()->toArray();
-        return array_reverse($reviews);
+        return $reviews;
     }
 
     // add review

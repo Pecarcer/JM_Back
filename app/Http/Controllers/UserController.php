@@ -25,7 +25,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all()->toArray();
-        return array_reverse($users);
+        return $users;
     }
 
     // add user

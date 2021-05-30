@@ -24,7 +24,7 @@ class PlayerController extends Controller
     public function index()
     {
         $players = Player::all()->toArray();
-        return array_reverse($players);
+        return $players;
     }
 
     // add player
