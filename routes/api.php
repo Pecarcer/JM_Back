@@ -14,6 +14,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,33 +31,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/login', function (Request $request) {
-    $data = $request->validate([
-        'email' => 'required|email',
-        'password' => 'required'
-    ]);
 
-    $user = User::where('email', $request->email)->first();
-
-    if (!$user || !Hash::check($request->password, $user->password)) {
-        return response([
-            'message' => ['Las credenciales no son correctas.']
-        ], 404);
-    }
-
-    $token = $user->createToken('my-app-token')->plainTextToken;
-
-    $response = [
-        'user' => $user,
-        'token' => $token
-    ];
-
-    return response($response, 201);
-});
-
-
-//TODO REGISTRO
-
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
 
 
 Route::group(['prefix' => 'boardgames', 'middleware' => 'auth:sanctum'], function () {
@@ -139,4 +116,6 @@ Route::group(['prefix' => 'users', 'middleware' => 'auth:sanctum'], function () 
     Route::get('edit/{id}', [UserController::class, 'edit']);
     Route::post('update/{id}', [UserController::class, 'update']);
     Route::delete('delete/{id}', [UserController::class, 'delete']);
+    //Route::get('/{id}/name', [UserController::class, 'getName']);
+    //Route::get('/{id}/role', [UserController::class, 'getRole']);
 });

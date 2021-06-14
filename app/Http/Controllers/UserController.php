@@ -44,7 +44,6 @@ class UserController extends Controller
             'role' =>$request->role,
             'password'=> Hash::make($request->password),
             'fullname' => $request->fullname,
-            'avatar' => "imagendefault.jpg"
         ]);
         $user->save();
 
@@ -75,4 +74,13 @@ class UserController extends Controller
 
         return response()->json('The user successfully deleted');
     }
+
+    /*
+    // all users
+    public function getName($id)
+    {
+        $user = User::find($id);
+        return $user
+    }
+*/
 }

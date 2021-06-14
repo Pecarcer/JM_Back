@@ -52,6 +52,20 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+         'boardgamepics' => [
+             'driver' => 'local',
+             'root' => storage_path('app/boardgamepics'),
+             'url' => env('APP_URL') . '/storage',
+             'visibility' => 'public',
+         ],
+
+         'postpics' => [
+            'driver' => 'local',
+            'root' => storage_path('app/postpics'),
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+            ],
+
     ],
 
     /*

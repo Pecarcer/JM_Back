@@ -36,7 +36,6 @@ class UserFactory extends Factory
             'role'=> 'user',
             'fullname' => $name,
             'remember_token' => Str::random(10),
-            'avatar' =>"imagendefault.png"
         ];
     }
 

@@ -25,7 +25,6 @@ class UserSeeder extends Seeder
             'role' => 'admin',
             'fullname' => 'José Carmona Cervera',
             'remember_token' => 'rememberJCC',
-            'avatar' => 'adminicon.png'
         ]);
 
         DB::table('users')->insert([
@@ -36,7 +35,6 @@ class UserSeeder extends Seeder
             'role' => 'admin',
             'fullname' => 'Juan Martinez Lopez',
             'remember_token' => 'rememberJML',
-            'avatar' => 'adminicon.png'
         ]);
 
 
