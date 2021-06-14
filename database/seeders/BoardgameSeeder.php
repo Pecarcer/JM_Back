@@ -14,7 +14,7 @@ class BoardgameSeeder extends Seeder
      */
     public function run()
     {
-        Boardgame::factory(20)->create();
+        Boardgame::factory(50)->create();
         $this->command->info('Boardgames añadidas correctamente');
     }
 }

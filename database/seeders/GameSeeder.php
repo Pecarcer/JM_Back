@@ -14,7 +14,7 @@ class GameSeeder extends Seeder
      */
     public function run()
     {
-        Game::factory(25)->create();
+        Game::factory(100)->create();
         $this->command->info('Games añadidas correctamente');
     }
 }

@@ -14,7 +14,7 @@ class DebtorSeeder extends Seeder
      */
     public function run()
     {
-        Debtor::factory(5)->create();
+        Debtor::factory(10)->create();
         $this->command->info('Debtors añadidos correctamente');
     }
 }

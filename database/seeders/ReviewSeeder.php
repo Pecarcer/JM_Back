@@ -14,7 +14,7 @@ class ReviewSeeder extends Seeder
      */
     public function run()
     {
-        Review::factory(35)->create();
+        Review::factory(100)->create();
         $this->command->info('Reviews añadidas correctamente');
     }
 }

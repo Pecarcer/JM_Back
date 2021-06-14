@@ -23,9 +23,10 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'post_text' => $this->faker->sentence(10),
+            'post_text' => $this->faker->sentence(20),
             'image' => "imagenPostDefault.jpg",
             'poster' => $this->faker->numberBetween(1,User::count()),
+            'title' => $this->faker->sentence(10),
         ];
     }
 }

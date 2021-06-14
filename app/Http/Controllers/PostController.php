@@ -33,13 +33,15 @@ class PostController extends Controller
         $this->validate($request, [
             'poster' => 'required',
             'post_text' => 'required',
-            'image' => ''
+            'image' => '',
+            'title' => 'required'
         ]);
 
         $post = new Post([
             'poster' => $request->poster,
             'post_text' => $request->post_text,
             'image' =>$request->image,
+            'title' => $request->title
         ]);
         $post->save();
 

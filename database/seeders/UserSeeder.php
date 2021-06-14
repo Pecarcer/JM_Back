@@ -17,18 +17,6 @@ class UserSeeder extends Seeder
     public function run()
     {
 
-        /*
-        DB::table('users')->insert([
-            'nick' => 'Invitado',
-            'email' => 'invitado@gmail.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make("1234"),
-            'role' => 'guest',
-            'fullname' => 'Usuario Invitado',
-            'avatar' => 'imagendefault.png'
-        ]); */
-
-
         DB::table('users')->insert([
             'nick' => 'Admin1',
             'email' => 'admin1@gmail.com',
@@ -52,7 +40,7 @@ class UserSeeder extends Seeder
         ]);
 
 
-        User::factory(10)->create();
+        User::factory(50)->create();
 
 
         $this->command->info('Usuarios añadidos correctamente');

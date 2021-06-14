@@ -14,7 +14,7 @@ class CommentSeeder extends Seeder
      */
     public function run()
     {
-        Comment::factory(60)->create();
+        Comment::factory(100)->create();
         $this->command->info('Comments añadidos correctamente');
     }
 }

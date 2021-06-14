@@ -14,7 +14,7 @@ class RoomSeeder extends Seeder
      */
     public function run()
     {
-        Room::factory(10)->create();
+        Room::factory(20)->create();
         $this->command->info('Rooms añadidas correctamente');
     }
 }

@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->unsignedbigInteger('poster');
             $table->string('post_text');
             $table->string('image')->nullable();
+            $table->string('title');
             $table->timestamps();
 
             $table->foreign('poster')->references('id')->on('users')->onDelete("cascade");

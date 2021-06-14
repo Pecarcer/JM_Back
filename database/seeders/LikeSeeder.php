@@ -14,7 +14,7 @@ class LikeSeeder extends Seeder
      */
     public function run()
     {
-        Like::factory(25)->create();
+        Like::factory(50)->create();
         $this->command->info('Likes añadidas correctamente');
     }
 }
