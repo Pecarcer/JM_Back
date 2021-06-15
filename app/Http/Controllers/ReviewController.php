@@ -40,7 +40,7 @@ class ReviewController extends Controller
         $review = new Review([
             'reviewer' => $request->reviewer,
             'boardgame_id' => $request->boardgame_id,
-            'score' =>$request->score,
+            'score' => $request->score,
             'opinion' => $request->opinion
         ]);
         $review->save();
@@ -71,5 +71,16 @@ class ReviewController extends Controller
         $review->delete();
 
         return response()->json('The review successfully deleted');
+    }
+
+    //  reviews by user
+    public function madeby($id)
+    {
+        //$reviews = Review::all()->where('reviewer',$id)->toArray();
+        $reviews = Review::join('boardgames','boardgames.id','reviews.boardgame_id')->select('boardgames.title as boardgameName','reviews.*')->where('reviewer',$id)->get();
+
+        return response()->json($reviews);
+        //$posts = Post::join('users','users.id','posts.poster')->select('users.nick as posterNick','posts.*')->get();
+
     }
 }

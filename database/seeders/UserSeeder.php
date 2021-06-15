@@ -25,6 +25,8 @@ class UserSeeder extends Seeder
             'role' => 'admin',
             'fullname' => 'José Carmona Cervera',
             'remember_token' => 'rememberJCC',
+            "created_at" =>  date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
         ]);
 
         DB::table('users')->insert([
@@ -35,6 +37,8 @@ class UserSeeder extends Seeder
             'role' => 'admin',
             'fullname' => 'Juan Martinez Lopez',
             'remember_token' => 'rememberJML',
+            "created_at" =>  date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
         ]);
 
 

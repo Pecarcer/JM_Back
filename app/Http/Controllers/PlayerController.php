@@ -68,4 +68,15 @@ class PlayerController extends Controller
 
         return response()->json('The player successfully deleted');
     }
+
+    //  games with user
+    public function with($id)
+    {
+
+        $games = Player::join('games', 'games.id', 'players.game')->join('boardgames', 'boardgames.id', 'games.boardgame_id')->select('boardgames.title as boardgameName', 'games.*', 'players.*')->where('players.user', $id)->get();
+
+        return response()->json($games);
+
+
+    }
 }

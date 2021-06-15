@@ -74,4 +74,16 @@ class GameController extends Controller
 
         return response()->json('The game successfully deleted');
     }
+
+
+    //  games made by user
+    public function madeby($id)
+    {
+        //$reviews = Review::all()->where('reviewer',$id)->toArray();
+        $reviews = Game::join('boardgames','boardgames.id','games.boardgame_id')->select('boardgames.title as boardgameName','games.*')->where('master',$id)->get();
+
+        return response()->json($reviews);
+        //$posts = Post::join('users','users.id','posts.poster')->select('users.nick as posterNick','posts.*')->get();
+
+    }
 }

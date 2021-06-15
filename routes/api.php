@@ -66,6 +66,8 @@ Route::group(['prefix' => 'games', 'middleware' => 'auth:sanctum'], function () 
     Route::get('edit/{id}', [GameController::class, 'edit']);
     Route::post('update/{id}', [GameController::class, 'update']);
     Route::delete('delete/{id}', [GameController::class, 'delete']);
+    Route::get('madeby/{id}', [GameController::class, 'madeby']);
+
 });
 
 Route::group(['prefix' => 'likes', 'middleware' => 'auth:sanctum'], function () {
@@ -82,6 +84,7 @@ Route::group(['prefix' => 'players', 'middleware' => 'auth:sanctum'], function (
     Route::get('edit/{id}', [PlayerController::class, 'edit']);
     Route::post('update/{id}', [PlayerController::class, 'update']);
     Route::delete('delete/{id}', [PlayerController::class, 'delete']);
+    Route::get('with/{id}', [PlayerController::class, 'with']);
 });
 
 Route::group(['prefix' => 'posts', 'middleware' => 'auth:sanctum'], function () {
@@ -98,6 +101,8 @@ Route::group(['prefix' => 'reviews', 'middleware' => 'auth:sanctum'], function (
     Route::get('edit/{id}', [ReviewController::class, 'edit']);
     Route::post('update/{id}', [ReviewController::class, 'update']);
     Route::delete('delete/{id}', [ReviewController::class, 'delete']);
+    Route::get('madeby/{id}', [ReviewController::class, 'madeby']);
+
 });
 
 
@@ -116,6 +121,5 @@ Route::group(['prefix' => 'users', 'middleware' => 'auth:sanctum'], function () 
     Route::get('edit/{id}', [UserController::class, 'edit']);
     Route::post('update/{id}', [UserController::class, 'update']);
     Route::delete('delete/{id}', [UserController::class, 'delete']);
-    //Route::get('/{id}/name', [UserController::class, 'getName']);
-    //Route::get('/{id}/role', [UserController::class, 'getRole']);
+
 });
