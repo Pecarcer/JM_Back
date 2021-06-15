@@ -26,7 +26,7 @@ class PostFactory extends Factory
             'post_text' => $this->faker->sentence(20),
             'image' => "imagenPostDefault.jpg",
             'poster' => $this->faker->numberBetween(1,User::count()),
-            'title' => $this->faker->sentence(10),
+            'title' => $this->faker->sentence(5),
         ];
     }
 }

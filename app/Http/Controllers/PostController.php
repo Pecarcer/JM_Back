@@ -23,7 +23,8 @@ class PostController extends Controller
     // all posts
     public function index()
     {
-        $posts = Post::all()->toArray();
+        //$posts = Post::all()->toArray();
+        $posts = Post::join('users','users.id','posts.poster')->select('users.nick as posterNick','posts.*')->get();
         return $posts;
     }
 
