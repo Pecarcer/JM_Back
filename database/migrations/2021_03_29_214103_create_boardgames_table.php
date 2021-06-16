@@ -23,7 +23,6 @@ class CreateBoardgamesTable extends Migration
             $table->string('playing_time');
             $table->string('ages');
             $table->string('publisher');
-            $table->string('image');
             $table->timestamps();
         });
     }

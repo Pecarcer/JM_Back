@@ -58,7 +58,6 @@ class BoardgameFactory extends Factory
             'playing_time' => $play_time,
             'ages' => $ages,
             'publisher' => $this->faker->unique()->word,
-            'image' => "imagenJuegoDefault.jpg"
         ];
     }
 }

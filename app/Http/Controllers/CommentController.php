@@ -33,14 +33,12 @@ class CommentController extends Controller
         $this->validate($request, [
             'author' => '',
             'review_id' => '',
-            'post' => 'required',
             'commentary' => 'required',
         ]);
 
         $comment = new Comment([
             'author' => $request->author,
             'review_id' => $request->review_id,
-            'post' => $request->post,
             'commentary' => $request->commentary
         ]);
         $comment->save();

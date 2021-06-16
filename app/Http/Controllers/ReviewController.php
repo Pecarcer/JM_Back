@@ -81,6 +81,11 @@ class ReviewController extends Controller
 
         return response()->json($reviews);
         //$posts = Post::join('users','users.id','posts.poster')->select('users.nick as posterNick','posts.*')->get();
+    }
 
+    public function ofBoardgame($id){
+        $reviews = Review::join('users','users.id','reviews.reviewer')->select('users.nick as reviewerName','reviews.*')->where('boardgame_id',$id)->get();
+
+        return response()->json($reviews);
     }
 }

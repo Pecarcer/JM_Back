@@ -102,6 +102,8 @@ Route::group(['prefix' => 'reviews', 'middleware' => 'auth:sanctum'], function (
     Route::post('update/{id}', [ReviewController::class, 'update']);
     Route::delete('delete/{id}', [ReviewController::class, 'delete']);
     Route::get('madeby/{id}', [ReviewController::class, 'madeby']);
+    Route::get('ofBoardgame/{id}', [ReviewController::class, 'ofBoardgame']);
+
 
 });
 

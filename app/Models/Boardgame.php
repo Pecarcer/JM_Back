@@ -23,7 +23,7 @@ class Boardgame extends Model
         'playing_time',
         'ages',
         'publisher',
-        'image',
+        //'image',
     ];
 
     public function reviews()

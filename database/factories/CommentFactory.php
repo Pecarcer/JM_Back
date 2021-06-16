@@ -24,25 +24,10 @@ class CommentFactory extends Factory
      */
     public function definition()
     {
-
-        $post = $this->faker->boolean(50); //TODO Explicar por qué hago esto
-
-        if ($post) {
-
-            return [
-                'author' => $this->faker->numberBetween(1, User::count()),
-                'review_id' => null,
-                'post' => $this->faker->numberBetween(1, Post::count()),
-                'commentary' => $this->faker->sentence(10),
-            ];
-        } else {
-
-            return [
-                'author' => $this->faker->numberBetween(1, User::count()),
-                'review_id' => $this->faker->numberBetween(1, Review::count()),
-                'post' => null,
-                'commentary' => $this->faker->sentence(10),
-            ];
-        }
+        return [
+            'author' => $this->faker->numberBetween(1, User::count()),
+            'review_id' => $this->faker->numberBetween(1, Review::count()),
+            'commentary' => $this->faker->sentence(10),
+        ];
     }
 }

@@ -18,13 +18,11 @@ class CreateCommentsTable extends Migration
             $table->id();
             $table->unsignedbigInteger('author');
             $table->unsignedbigInteger('review_id')->nullable();
-            $table->unsignedbigInteger('post')->nullable();
             $table->string('commentary');
             $table->timestamps();
-
             $table->foreign('author')->references('id')->on('users')->onDelete("cascade");
             $table->foreign('review_id')->references('id')->on('reviews')->onDelete("cascade");
-            $table->foreign('post')->references('id')->on('posts')->onDelete("cascade");
+
         });
     }
 
