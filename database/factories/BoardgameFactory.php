@@ -49,8 +49,11 @@ class BoardgameFactory extends Factory
 
         $ages = " +" . $this->faker->numberBetween(2,16);
 
+        $title = $this->faker->unique()->word;
+        $title = ucfirst($title);
+
         return [
-            'title' => $this->faker->unique()->word,
+            'title' => $title,
             'creator' => $name,
             'release' => $this->faker->date(),
             'min_num_players' => $min_num_players,

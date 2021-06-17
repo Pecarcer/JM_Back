@@ -18,6 +18,8 @@ class Review extends Model
     protected $fillable = [
         'score',
         'opinion',
+        'reviewer',
+        'boardgame_id'
     ];
 
     public function boardgame()
