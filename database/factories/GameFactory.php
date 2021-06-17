@@ -29,7 +29,6 @@ class GameFactory extends Factory
             'time' => $this->faker->time,
             'master' => $this->faker->numberBetween(1,User::count()),
             'boardgame_id' => $this->faker->numberBetween(1,Boardgame::count()),
-            'room_id'=> $this->faker->numberBetween(1,Room::count()),
         ];
     }
 }

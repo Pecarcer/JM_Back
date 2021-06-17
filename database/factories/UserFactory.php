@@ -27,9 +27,11 @@ class UserFactory extends Factory
         $firstName = $this->faker->firstName;
         $lastName = $this->faker->lastName;
         $name = $firstName . " " . $lastName;
+        $nick = $this->faker->unique()->word;
+        $nick = ucfirst($nick);
 
         return [
-            'nick' => $this->faker->unique()->word,
+            'nick' => $nick,
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),
             'password' => Hash::make("1234"),

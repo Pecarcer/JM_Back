@@ -68,4 +68,10 @@ class LikeController extends Controller
 
         return response()->json('The like successfully deleted');
     }
+
+    public function on($id){
+        $likes = Like::join('users','users.id','likes.user')->select('users.nick as likeAuthor','likes.*')->where('review',$id)->get();
+
+        return response()->json($likes);
+    }
 }

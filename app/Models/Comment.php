@@ -15,7 +15,9 @@ class Comment extends Model
      * @var array
      */
     protected $fillable = [
-        'comment',
+        'commentary',
+        'author',
+        'review_id'
     ];
 
 
@@ -31,7 +33,7 @@ class Comment extends Model
     {
         return $this->belongsTo(
             Review::class,
-            'reviewer'
+            'review_id'
         );
     }
 

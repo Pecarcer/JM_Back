@@ -69,23 +69,25 @@ class ReviewController extends Controller
     {
         $review = Review::find($id);
         $review->delete();
-
         return response()->json('The review successfully deleted');
     }
 
     //  reviews by user
     public function madeby($id)
     {
-        //$reviews = Review::all()->where('reviewer',$id)->toArray();
         $reviews = Review::join('boardgames','boardgames.id','reviews.boardgame_id')->select('boardgames.title as boardgameName','reviews.*')->where('reviewer',$id)->get();
-
         return response()->json($reviews);
-        //$posts = Post::join('users','users.id','posts.poster')->select('users.nick as posterNick','posts.*')->get();
     }
 
     public function ofBoardgame($id){
         $reviews = Review::join('users','users.id','reviews.reviewer')->select('users.nick as reviewerName','reviews.*')->where('boardgame_id',$id)->get();
-
         return response()->json($reviews);
     }
+
+    public function getWithName($id){
+        $review = Review::join('users','users.id','reviews.reviewer')->select('*','users.nick as reviewerName')->where('reviews.id',$id)->get();
+        return response()->json($review);
+    }
+
+
 }

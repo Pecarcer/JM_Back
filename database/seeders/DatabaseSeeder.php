@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(BoardgameSeeder::class);
         $this->call(ReviewSeeder::class);
-        $this->call(RoomSeeder::class);
         $this->call(GameSeeder::class);
         $this->call(PostSeeder::class);
         $this->call(LikeSeeder::class);

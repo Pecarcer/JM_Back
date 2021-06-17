@@ -31,8 +31,8 @@ class CommentController extends Controller
     public function add(Request $request)
     {
         $this->validate($request, [
-            'author' => '',
-            'review_id' => '',
+            'author' => 'required',
+            'review_id' => 'required',
             'commentary' => 'required',
         ]);
 
@@ -69,5 +69,12 @@ class CommentController extends Controller
         $comment->delete();
 
         return response()->json('The comment successfully deleted');
+    }
+
+
+    public function on($id){
+        $comments = Comment::join('users','users.id','comments.author')->select('users.nick as commentAuthor','comments.*')->where('review_id',$id)->get();
+
+        return response()->json($comments);
     }
 }

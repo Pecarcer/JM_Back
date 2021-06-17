@@ -17,14 +17,12 @@ class CreateGamesTable extends Migration
             $table->id();
             $table->unsignedbigInteger('master');
             $table->unsignedbigInteger('boardgame_id');
-            $table->unsignedbigInteger('room_id');
             $table->date('date');
             $table->time('time');
             $table->timestamps();
-
             $table->foreign('master')->references('id')->on('users')->onDelete("cascade");
             $table->foreign('boardgame_id')->references('id')->on('boardgames')->onDelete("cascade");
-            $table->foreign('room_id')->references('id')->on('rooms')->onDelete("cascade");
+
         });
     }
 
