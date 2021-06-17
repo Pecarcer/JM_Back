@@ -23,8 +23,8 @@ class ReviewController extends Controller
     // all reviews
     public function index()
     {
-        $reviews = Review::all()->toArray();
-        return $reviews;
+        $reviews = Review::join('boardgames','boardgames.id','reviews.boardgame_id')->join('users','users.id','reviews.reviewer')->select('boardgames.title as boardgameName','users.nick as author','reviews.*')->get();
+        return response()->json($reviews);
     }
 
     // add review
