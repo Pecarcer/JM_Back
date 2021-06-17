@@ -74,4 +74,10 @@ class LikeController extends Controller
 
         return response()->json($likes);
     }
+
+    public function check($iduser,$idreview){
+        $like = Like::where('user','=',$iduser)->where('review','=',$idreview)->get();
+
+        return response()->json($like);
+    }
 }

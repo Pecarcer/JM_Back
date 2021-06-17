@@ -51,7 +51,7 @@ class ReviewController extends Controller
     // edit review
     public function edit($id)
     {
-        $review = Review::find($id);
+        $review = Review::join('boardgames','boardgames.id','reviews.boardgame_id')->join('users','users.id','reviews.reviewer')->select('boardgames.title as boardgameName','users.nick as author','reviews.*')->where('reviews.id',$id)->get();
         return response()->json($review);
     }
 

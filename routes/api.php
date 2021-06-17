@@ -78,6 +78,7 @@ Route::group(['prefix' => 'likes', 'middleware' => 'auth:sanctum'], function () 
     Route::post('update/{id}', [LikeController::class, 'update']);
     Route::delete('delete/{id}', [LikeController::class, 'delete']);
     Route::get('on/{id}', [LikeController::class, 'on']);
+    Route::get('check/{iduser}/{idreview}', [LikeController::class, 'check']);
 
 });
 

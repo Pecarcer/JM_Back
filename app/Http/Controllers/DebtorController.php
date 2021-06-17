@@ -23,8 +23,8 @@ class DebtorController extends Controller
     // all debtors
     public function index()
     {
-        $debtors = Debtor::all()->toArray();
-        return $debtors;
+        $debtors = Debtor::join('users','users.id','debtors.user')->select('users.nick as debtorNick','users.fullname as debtorFullname','debtors.*')->orderBy('debtors.id', 'ASC')->get();
+        return response()->json($debtors);
     }
 
     // add debtor
