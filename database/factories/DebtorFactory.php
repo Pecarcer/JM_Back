@@ -23,7 +23,7 @@ class DebtorFactory extends Factory
     public function definition()
     {
         return [
-            'user' => $this->faker->numberBetween(4, User::count()),
+            'user' => $this->faker->unique()->numberBetween(4, User::count()),
             'months_overdue' => $this->faker->numberBetween(1, 12),
         ];
     }

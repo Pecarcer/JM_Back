@@ -113,15 +113,6 @@ Route::group(['prefix' => 'reviews', 'middleware' => 'auth:sanctum'], function (
 });
 
 
-Route::group(['prefix' => 'rooms', 'middleware' => 'auth:sanctum'], function () {
-    Route::get('/', [RoomController::class, 'index']);
-    Route::post('add', [RoomController::class, 'add']);
-    Route::get('edit/{id}', [RoomController::class, 'edit']);
-    Route::post('update/{id}', [RoomController::class, 'update']);
-    Route::delete('delete/{id}', [RoomController::class, 'delete']);
-});
-
-
 Route::group(['prefix' => 'users', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/', [UserController::class, 'index']);
     Route::post('add', [UserController::class, 'add']);

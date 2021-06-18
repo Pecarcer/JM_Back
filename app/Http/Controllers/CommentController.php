@@ -23,8 +23,11 @@ class CommentController extends Controller
     // all comments
     public function index()
     {
-        $comments = Comment::all()->toArray();
-        return $comments;
+     //   $comments = Comment::all()->toArray();
+       // return $comments;
+
+        $comments = Comment::join('users','users.id','comments.author')->select('users.nick as authorNick','comments.*')->orderBy('comments.created_at', 'DESC')->get();
+        return response()->json($comments);
     }
 
     // add comment
@@ -49,7 +52,7 @@ class CommentController extends Controller
     // edit comment
     public function edit($id)
     {
-        $comment = Comment::find($id);
+        $comment = Comment::join('users','users.id','comments.author')->select('users.nick as authorNick','comments.*')->where('comments.id', $id)->get();
         return response()->json($comment);
     }
 

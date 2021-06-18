@@ -23,8 +23,8 @@ class GameController extends Controller
     // all games
     public function index()
     {
-        $games = Game::all()->toArray();
-        return $games;
+        $games = Game::join('users','users.id','games.master')->join('boardgames','boardgames.id','games.boardgame_id')->select('users.nick as masterNick','boardgames.title as boardgameTitle','games.*')->get();
+        return response()->json($games);
     }
 
     // add game

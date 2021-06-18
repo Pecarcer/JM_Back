@@ -47,7 +47,7 @@ class DebtorController extends Controller
     // edit debtor
     public function edit($id)
     {
-        $debtor = Debtor::find($id);
+        $debtor = Debtor::join('users','users.id','debtors.user')->select('users.nick as debtorNick','users.fullname as debtorFullname','debtors.*')->where('debtors.id',$id)->get();
         return response()->json($debtor);
     }
 

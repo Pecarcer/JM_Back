@@ -60,10 +60,28 @@ class UserController extends Controller
     // update user
     public function update($id, Request $request)
     {
+        /*
         $user = User::find($id);
+
+        $this->validate($request, [
+            'nick' => 'string|max:255|unique:users,nick,' . $user->nick,
+            'email' => 'string|email|max:255|unique:users,email,' . $user->email,
+            //'password' => 'string|confirmed|min:4',
+            'fullname' => 'string'
+        ]);
+
+        //$user->fill($request->all());
+        //$user->password = Hash::make($request->password);
+
+
         $user->update($request->all());
 
-        return response()->json('The user successfully updated');
+
+        return response()->json('The user successfully updated'); */
+
+
+        $user = User::find($id);
+        $user->update($request->all());
     }
 
     // delete user
@@ -74,13 +92,4 @@ class UserController extends Controller
 
         return response()->json('The user successfully deleted');
     }
-
-    /*
-    // all users
-    public function getName($id)
-    {
-        $user = User::find($id);
-        return $user
-    }
-*/
 }
