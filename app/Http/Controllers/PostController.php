@@ -23,7 +23,7 @@ class PostController extends Controller
     // all posts
     public function index()
     {
-        $posts = Post::join('users','users.id','posts.poster')->select('users.nick as posterNick','posts.*')->get();
+        $posts = Post::join('users','users.id','posts.poster')->select('users.nick as posterNick','posts.*')->orderBy('posts.id','DESC')->get();
         return $posts;
     }
 
