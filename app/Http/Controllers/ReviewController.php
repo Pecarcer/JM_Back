@@ -85,7 +85,7 @@ class ReviewController extends Controller
     }
 
     public function getWithName($id){
-        $review = Review::join('users','users.id','reviews.reviewer')->select('*','users.nick as reviewerName')->where('reviews.id',$id)->get();
+        $review = Review::join('users','users.id','reviews.reviewer')->join('boardgames','boardgames.id','reviews.boardgame_id',)->select('reviews.*','users.nick as reviewerName','boardgames.title as boardgameName')->where('reviews.id',$id)->get();
         return response()->json($review);
     }
 

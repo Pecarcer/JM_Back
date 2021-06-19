@@ -9,6 +9,17 @@ class Player extends Model
 {
     use HasFactory;
 
+        /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'user',
+        'game',
+    ];
+
+
     public function user()
     {
         return $this->belongsTo(

@@ -39,20 +39,8 @@ class BoardgameController extends Controller
             'playing_time' => 'required',
             'ages' => 'required',
             'publisher' => 'required',
-            //'file' => 'required|mimes:jpg,jpeg,png',
         ]);
-/*
-        if ($request->file('file') != null) {
 
-            $image_path = $request->file('file');
-            if ($image_path) {
-
-                $image_path_name = time() . $image_path->getClientOriginalName();
-
-                Storage::disk('boardgamepics')->put($image_path_name, File::get($image_path));
-            }
-
-        } */
 
         $boardgame = new Boardgame([
             'title'=> $request->title,
@@ -63,7 +51,6 @@ class BoardgameController extends Controller
             'playing_time' =>$request->playing_time,
             'ages' => $request->ages,
             'publisher' =>$request->publisher,
-            //'image' => $image_path_name
         ]);
         $boardgame->save();
 

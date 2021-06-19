@@ -23,8 +23,8 @@ class PlayerController extends Controller
     // all players
     public function index()
     {
-        $players = Player::all()->toArray();
-        return $players;
+        $players = Player::join('users', 'users.id', 'players.user')->select('users.nick as playerNick', 'players.*')->orderBy('players.id', 'ASC')->get();
+        return response()->json($players);
     }
 
     // add player
@@ -72,11 +72,14 @@ class PlayerController extends Controller
     //  games with user
     public function with($id)
     {
-
         $games = Player::join('games', 'games.id', 'players.game')->join('boardgames', 'boardgames.id', 'games.boardgame_id')->select('boardgames.title as boardgameName', 'games.*', 'players.*')->where('players.user', $id)->get();
-
         return response()->json($games);
+    }
 
-
+    //  players of a certain game
+    public function of($id)
+    {
+        $players = Player::join('users', 'users.id', 'players.user')->select('users.nick as playerNick', 'players.*')->where('players.game', $id)->get();
+        return response()->json($players);
     }
 }

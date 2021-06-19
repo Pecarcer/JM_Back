@@ -12,7 +12,6 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReviewController;
-use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 
@@ -89,6 +88,7 @@ Route::group(['prefix' => 'players', 'middleware' => 'auth:sanctum'], function (
     Route::post('update/{id}', [PlayerController::class, 'update']);
     Route::delete('delete/{id}', [PlayerController::class, 'delete']);
     Route::get('with/{id}', [PlayerController::class, 'with']);
+    Route::get('of/{id}', [PlayerController::class, 'of']);
 });
 
 Route::group(['prefix' => 'posts', 'middleware' => 'auth:sanctum'], function () {

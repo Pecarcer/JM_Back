@@ -23,7 +23,6 @@ class PostController extends Controller
     // all posts
     public function index()
     {
-        //$posts = Post::all()->toArray();
         $posts = Post::join('users','users.id','posts.poster')->select('users.nick as posterNick','posts.*')->get();
         return $posts;
     }
@@ -34,14 +33,12 @@ class PostController extends Controller
         $this->validate($request, [
             'poster' => 'required',
             'post_text' => 'required',
-            'image' => '',
             'title' => 'required'
         ]);
 
         $post = new Post([
             'poster' => $request->poster,
             'post_text' => $request->post_text,
-            'image' =>$request->image,
             'title' => $request->title
         ]);
         $post->save();
@@ -52,8 +49,8 @@ class PostController extends Controller
     // edit post
     public function edit($id)
     {
-        $post = Post::find($id);
-        return response()->json($post);
+        $post = Post::join('users','users.id','posts.poster')->select('users.nick as posterNick','posts.*')->where('posts.id',$id)->get();
+        return $post;
     }
 
     // update post

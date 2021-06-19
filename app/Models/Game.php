@@ -18,6 +18,8 @@ class Game extends Model
     protected $fillable = [
         'date',
         'time',
+        'master',
+        'boardgame_id'
     ];
 
     public function boardgame()
@@ -36,13 +38,7 @@ class Game extends Model
         );
     }
 
-    public function room()
-    {
-        return $this->belongsTo(
-            Room::class,
-            'room_id'
-        );
-    }
+
 
 
 }

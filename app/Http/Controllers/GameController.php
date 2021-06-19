@@ -23,7 +23,7 @@ class GameController extends Controller
     // all games
     public function index()
     {
-        $games = Game::join('users','users.id','games.master')->join('boardgames','boardgames.id','games.boardgame_id')->select('users.nick as masterNick','boardgames.title as boardgameTitle','games.*')->get();
+        $games = Game::join('users','users.id','games.master')->join('boardgames','boardgames.id','games.boardgame_id')->select('users.nick as masterNick','boardgames.title as boardgameTitle','games.*')->orderBy('games.id','ASC')->get();
         return response()->json($games);
     }
 
@@ -33,7 +33,7 @@ class GameController extends Controller
         $this->validate($request, [
             'master' => 'required',
             'boardgame_id' => 'required',
-            'room_id' => 'required',
+
             'date' => 'required|date',
             'time' => 'required'
         ]);
@@ -41,7 +41,7 @@ class GameController extends Controller
         $game = new Game([
             'master' => $request->master,
             'boardgame_id' => $request->boardgame_id,
-            'room_id' => $request->room_id,
+
             'date' => $request->date,
             'time' => $request->time
         ]);
@@ -53,7 +53,7 @@ class GameController extends Controller
     // edit game
     public function edit($id)
     {
-        $game = Game::find($id);
+        $game = Game::join('users','users.id','games.master')->join('boardgames','boardgames.id','games.boardgame_id')->select('users.nick as masterNick','boardgames.title as boardgameTitle','games.*')->where('games.id',$id)->get();
         return response()->json($game);
     }
 
