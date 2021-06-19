@@ -18,7 +18,7 @@ class DebtorSeeder extends Seeder
         //Debtor::factory(10)->create();
 
         DB::table('debtors')->insert([
-            'user' => '24',
+            'user' => '9',
             'months_overdue' => '2',
             "created_at" =>  date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
@@ -32,7 +32,7 @@ class DebtorSeeder extends Seeder
         ]);
 
         DB::table('debtors')->insert([
-            'user' => '30',
+            'user' => '8',
             'months_overdue' => '4',
             "created_at" =>  date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),

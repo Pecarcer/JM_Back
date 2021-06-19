@@ -41,8 +41,102 @@ class UserSeeder extends Seeder
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
 
+        DB::table('users')->insert([
+            'nick' => 'JulianDado',
+            'email' => 'a@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make("1234"),
+            'role' => 'User',
+            'fullname' => 'Juan Martinez Lopez',
+            'remember_token' => 'remember',
+            "created_at" =>  date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('users')->insert([
+            'nick' => 'MartaCartas',
+            'email' => 'b@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make("1234"),
+            'role' => 'User',
+            'fullname' => 'Marta Perez Benitez',
+            'remember_token' => 'remembermpb',
+            "created_at" =>  date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
+        ]);
 
-        User::factory(50)->create();
+        DB::table('users')->insert([
+            'nick' => 'MariaFicha',
+            'email' => 'c@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make("1234"),
+            'role' => 'User',
+            'fullname' => 'Maria Lopez Comez',
+            'remember_token' => 'remembermlc',
+            "created_at" =>  date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('users')->insert([
+            'nick' => 'AlbertoTablero',
+            'email' => 'd@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make("1234"),
+            'role' => 'User',
+            'fullname' => 'Alberto Gonzalez Perez',
+            'remember_token' => 'rememberagp',
+            "created_at" =>  date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('users')->insert([
+            'nick' => 'CasimiroParchis',
+            'email' => 'e@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make("1234"),
+            'role' => 'User',
+            'fullname' => 'Casimiro Martinez Lopez',
+            'remember_token' => 'remembercml',
+            "created_at" =>  date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('users')->insert([
+            'nick' => 'PalomaCluedo',
+            'email' => 'f@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make("1234"),
+            'role' => 'User',
+            'fullname' => 'Paloma Martinez Lopez',
+            'remember_token' => 'rememberpml',
+            "created_at" =>  date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('users')->insert([
+            'nick' => 'FernandoMonopoly',
+            'email' => 'g@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make("1234"),
+            'role' => 'User',
+            'fullname' => 'Fernando Fernanez Fernandoz',
+            'remember_token' => 'rememberfff',
+            "created_at" =>  date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('users')->insert([
+            'nick' => 'ManuelAjedrez',
+            'email' => 'h@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make("1234"),
+            'role' => 'User',
+            'fullname' => 'Manuel Martinez Lopez',
+            'remember_token' => 'remembermml',
+            "created_at" =>  date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
+        ]);
+
+        //User::factory(50)->create();
 
 
         $this->command->info('Usuarios añadidos correctamente');

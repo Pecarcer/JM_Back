@@ -18,7 +18,7 @@ class CommentSeeder extends Seeder
         //Comment::factory(100)->create();
 
         DB::table('comments')->insert([
-            'author' => '41',
+            'author' => '2',
             'review_id' => '1',
             'commentary' => 'Pues muy bien dicho',
             "created_at" =>  date('Y-m-d H:i:s'),
@@ -26,7 +26,7 @@ class CommentSeeder extends Seeder
         ]);
 
         DB::table('comments')->insert([
-            'author' => '42',
+            'author' => '3',
             'review_id' => '1',
             'commentary' => 'Bueno cada uno tiene su opinion',
             "created_at" =>  date('Y-m-d H:i:s'),
@@ -34,56 +34,56 @@ class CommentSeeder extends Seeder
         ]);
 
         DB::table('comments')->insert([
-            'author' => '43',
+            'author' => '4',
             'review_id' => '1',
             'commentary' => 'No está hecha la miel para la boca del burro',
             "created_at" =>  date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
         DB::table('comments')->insert([
-            'author' => '24',
+            'author' => '8',
             'review_id' => '1',
             'commentary' => 'Tan acertado como siempre!',
             "created_at" =>  date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
         DB::table('comments')->insert([
-            'author' => '35',
+            'author' => '7',
             'review_id' => '2',
             'commentary' => 'Yo creo que te has emocionao',
             "created_at" =>  date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
         DB::table('comments')->insert([
-            'author' => '42',
+            'author' => '6',
             'review_id' => '2',
             'commentary' => 'QUÉ DICES??',
             "created_at" =>  date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
         DB::table('comments')->insert([
-            'author' => '49',
+            'author' => '5',
             'review_id' => '3',
             'commentary' => 'Bueno si tu lo dices',
             "created_at" =>  date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
         DB::table('comments')->insert([
-            'author' => '36',
+            'author' => '3',
             'review_id' => '6',
             'commentary' => 'No sé yo...',
             "created_at" =>  date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
         DB::table('comments')->insert([
-            'author' => '20',
+            'author' => '1',
             'review_id' => '6',
             'commentary' => 'PERO CÓMO PUEDES DECIR ESO',
             "created_at" =>  date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
         ]);
         DB::table('comments')->insert([
-            'author' => '24',
+            'author' => '9',
             'review_id' => '1',
             'commentary' => 'Me han entrado ganas de jugarlo!',
             "created_at" =>  date('Y-m-d H:i:s'),
