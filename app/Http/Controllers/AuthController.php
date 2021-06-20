@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-
+/*
+* Registers a new user
+*/
     public function register(Request $request)
     {
         $this->validate($request, [
@@ -41,7 +43,9 @@ class AuthController extends Controller
         return response($response, 201);
     }
 
-
+/*
+* Logins the user based on the credentials provided
+*/
     public function login(Request $request){
 
         $request->validate([

@@ -20,14 +20,14 @@ class BoardgameController extends Controller
     }
 
 
-    // all boardgames
+    /* gets all boardgames */
     public function index()
     {
         $boardgames = Boardgame::all()->toArray();
         return $boardgames;
     }
 
-    // add boardgame
+    /* adds boardgame */
     public function add(Request $request)
     {
         $this->validate($request, [
@@ -57,14 +57,14 @@ class BoardgameController extends Controller
         return response()->json('The boardgame successfully added');
     }
 
-    // edit boardgame
+    /* edits boardgame */
     public function edit($id)
     {
         $boardgame = Boardgame::find($id);
         return response()->json($boardgame);
     }
 
-    // update boardgame
+    /* updates boardgame */
     public function update($id, Request $request)
     {
         $boardgame = Boardgame::find($id);
@@ -73,7 +73,7 @@ class BoardgameController extends Controller
         return response()->json('The boardgame successfully updated');
     }
 
-    // delete boardgame
+    /* deletes boardgame */
     public function delete($id)
     {
         $boardgame = Boardgame::find($id);
